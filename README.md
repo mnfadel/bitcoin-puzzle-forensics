@@ -107,9 +107,17 @@ when the alternative is burning five or six figures of GPU time chasing a door t
 ## Repository layout
 
 ```
+references/
+  investigation-compendium.md  Consolidated findings, Phases 1-5D
+  forensic_findings.md         Collected transaction data, signatures, phase results
+  known_data.md                Puzzle addresses, public keys, solved keys (all public)
+  blockchain_data.md           Transaction chain map
+  phase5_summary.md            Fingerprinting and tracing summary
 scripts/
   forensics_fetcher.py         Multi-provider blockchain ingestion (explorer failover)
+  parse_signatures.py          DER signature parsing
   complete_signatures.py       Signature extraction and normalization
+  nonce_recovery.py            Nonce recovery from solved-puzzle keys
   verify_sighash_rfc6979.py    SIGHASH reconstruction, nonce recovery, RFC 6979 verification
   final_rng_attack.py          RNG-weakness probes against the recovered nonce set
   phase5_fingerprint.py        Signing-software fingerprinting from TX structure
@@ -119,6 +127,9 @@ scripts/
 examples/
   rfc6979_check.py             Self-contained, runnable demo of the core compliance check
 ```
+
+> All private keys appearing in `references/` are for **already-solved** puzzles and are public
+> knowledge, published widely. No key for an unsolved output appears anywhere in this repository.
 
 ## Reproducing
 
