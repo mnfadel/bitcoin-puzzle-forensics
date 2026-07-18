@@ -1,5 +1,16 @@
-# Complete signature data for private key recovery
-# Found 21 matching signatures
+"""
+Extracted signature data from the exposure transaction - reference dataset.
+==========================================================================
+
+The (r, s) pairs and message hashes parsed out of the 21 inputs of exposure
+transaction 17e4e323cfbc68d7f0071cad09364e8193eedf8fefbcbd8a21b4b65717a4b3d3,
+kept as a module so the analysis scripts can import them without re-fetching
+from a block explorer on every run.
+
+Each value is annotated with its source transaction and originating address.
+Regenerate with forensics_fetcher.py + parse_signatures.py if you would rather
+derive them yourself than trust this file - everything here is public chain data.
+"""
 
 COMPLETE_R_VALUES = [
     0x975bf9ee76637ce33f4539397ebb9fd2cd2cb77d79fccfefc291d8e4bd4464bb,  # 17e4e323cfbc68d7... from 19GpszRNUe...

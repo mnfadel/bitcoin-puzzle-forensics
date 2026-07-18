@@ -3,9 +3,10 @@
 Bitcoin Puzzle Blockchain Forensics — Data Fetcher & Validator
 ==============================================================
 
-This script fetches, validates, and computes ALL missing parameters/values
-needed for the puzzles-forensics skill. Run locally and upload the output
-JSON file back to Claude for skill updates.
+Entry point of the pipeline. Fetches, validates and computes the transaction
+and signature data every other script here consumes, and writes the result to
+JSON so downstream analysis runs offline against a fixed dataset rather than
+re-querying explorers (which rate-limit, and whose responses drift over time).
 
 What it does:
   1. Fetches all transactions for each exposure puzzle address (P65-P160)

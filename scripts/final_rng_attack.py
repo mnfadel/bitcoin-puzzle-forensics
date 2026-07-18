@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
 """
-FINAL RNG VULNERABILITY ATTACK
-Exploits the pattern 0x33 that appeared 7 times!
+RNG weakness probe - HYPOTHESIS REJECTED
+========================================
+
+Tests whether the recovered nonce set shows an exploitable RNG weakness.
+
+The trigger was an apparent pattern: the byte 0x33 recurring across several
+recovered nonces. If nonces came from a weak or structured PRNG rather than a
+deterministic derivation, that recurrence could be leveraged into key recovery.
+
+RESULT: rejected. All 14 recovered nonces are RFC 6979 compliant - they are
+derived deterministically via HMAC-SHA256 from (private key, message hash), so
+there is no RNG to be weak. The 0x33 recurrence is what you expect from chance
+in a small sample of uniformly distributed bytes, not a signal.
+
+Kept in the repository because a probe that came back negative is part of the
+evidence that the attack surface is closed. See references/investigation-compendium.md
+for the full attack-vector assessment, and verify_sighash_rfc6979.py for the
+compliance check that settled it.
 """
 
 import hashlib
