@@ -1,0 +1,25 @@
+# secrets / environment — NEVER commit
+.env
+*.env
+!*.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+
+# analysis outputs (regenerate by running the scripts)
+*_results.txt
+*_results.json
+search_progress*.json
+output_addresses.txt
+*.log
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# os
+.DS_Store
+Thumbs.db

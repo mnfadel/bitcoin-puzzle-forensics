@@ -1,0 +1,6 @@
+# core — blockchain API ingestion
+requests>=2.28.0
+
+# optional — lattice reduction for the Hidden Number Problem attack
+# (skip if you only want the RFC 6979 / r-reuse analysis)
+# fpylll>=0.6.0
